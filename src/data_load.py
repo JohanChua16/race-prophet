@@ -1,9 +1,12 @@
+import os
 import fastf1
 import pandas as pd
 import requests
 
-# Enable local cache for faster repeated runs
-fastf1.Cache.enable_cache("cache")
+# Ensure a cache dir exists (works locally and on Streamlit Cloud)
+CACHE_DIR = os.environ.get("FASTF1_CACHE", ".fastf1cache")
+os.makedirs(CACHE_DIR, exist_ok=True)
+fastf1.Cache.enable_cache(CACHE_DIR)
 
 JOLPICA_BASE = "http://api.jolpi.ca/ergast/f1"
 

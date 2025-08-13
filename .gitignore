@@ -1,0 +1,16 @@
+# Python cache & virtual env
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# FastF1 cache
+cache/
+
+# Model outputs
+models/*.joblib
+models/*.csv
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
